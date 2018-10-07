@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('datatable', 'DataTableController@datatable');
 // Get Data
 Route::get('index', 'CompanyController@index');
-
 Route::get('loadmyinfodata', 'CompanyController@getData')->name('loadmyinfodata');
 Route::get('getinfodata', 'CompanyController@getcloud_data')->name('getinfodata');
 
