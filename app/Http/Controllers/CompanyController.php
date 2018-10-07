@@ -74,7 +74,7 @@ class CompanyController extends Controller
                 $api= '';
                 $apiaccessurl='';
                 $apisourceid='';
-              
+              //loop inner
               foreach($metatypes as $metatype){
               
               if($metatype->id==='name'){
@@ -147,6 +147,7 @@ class CompanyController extends Controller
             }
               
           }
+          // insert into database
           $model = Company::create([
                       'name' => $name,
                       'acronym' => $acronym,
@@ -182,7 +183,7 @@ class CompanyController extends Controller
            return redirect()->route('home')->with('success', 'Data imported and Saved successfully  .');
           }
           else{
-                
+             // failed to pull   
           return redirect()->route('home')->with('error', 'Failed to get Data...Check network Connection  .');
           }
           
