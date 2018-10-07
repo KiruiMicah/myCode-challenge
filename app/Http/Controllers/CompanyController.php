@@ -23,7 +23,8 @@ class CompanyController extends Controller
      public function getData()
 
     {
-        $data_info=Company::all();//Select('id','name','acronym','description','url','type','languagesupported','periodicity','economycoverage','granularity','numberofeconomies','topics','updatefrequency','lastrevisiondate','contactdeatails','accessoption', 'bulkdownload', 'site','detailpageurl','popularity','coverage','api','apiaccessurl','apisourceid')
+        $data_info=Company::all();
+        //Select('id','name','acronym','description','url','type','languagesupported','periodicity','economycoverage','granularity','numberofeconomies','topics','updatefrequency','lastrevisiondate','contactdeatails','accessoption', 'bulkdownload', 'site','detailpageurl','popularity','coverage','api','apiaccessurl','apisourceid')
         //->get();
         
         return Datatables::of($data_info)->make(true);
@@ -39,11 +40,10 @@ class CompanyController extends Controller
         $model=Company::truncate();
 
         //fetching data from url
-          $json_data = Curl::to('http://api.worldbank.org/v2/datacatalog?format=json')->get();
+        $json_data = Curl::to('http://api.worldbank.org/v2/datacatalog?format=json')->get();
           //decode to array objects
-          
-
-          $data = json_decode($json_data);
+          if($json_data){
+            $data = json_decode($json_data);
           $cataloges=$data->datacatalog;
           //loop through
           foreach($cataloges as $catalog){
@@ -179,7 +179,13 @@ class CompanyController extends Controller
        
            //   return("Data imported and saved Successfuly");
           
-          return redirect()->route('home')->with('success', 'Data imported and Saved successfully  .');
+           return redirect()->route('home')->with('success', 'Data imported and Saved successfully  .');
+          }
+          else{
+                
+          return redirect()->route('home')->with('error', 'Failed to get Data...Check network Connection  .');
+          }
+          
     }
     /**
      * Show the form for creating a new resource.

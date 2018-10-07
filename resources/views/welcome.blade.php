@@ -67,7 +67,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links"  style="background-color:lightblue">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -78,12 +78,15 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Powergen Renewable Energy
+                <div  class="alert alert-info">
+                  <h3>  Powergen Renewable Energy</h3>
                 </div>
 
                 <div class="links">
                     <a href="#">Welcome to Powergen Renewable Energy</a>
+                <div>
+
+                </div>
                    
                 </div>
             </div>

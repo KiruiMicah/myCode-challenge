@@ -17,6 +17,11 @@
                             {{ session('success') }}
                         </div>
                     @endif
+                    @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                     @if (session('success'))
                     <div class="alert alert-info">
                     <a href="{{url('Company')}}"><i class="fa fa-user"></i>Click To View updated  Data on our Server</a>
