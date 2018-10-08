@@ -184,7 +184,7 @@ class CompanyController extends Controller
           }
           else{
              // failed to pull   
-          return redirect()->route('home')->with('error', 'Failed to get Data...Check network Connection  .');
+          return redirect()->route('home')->with('error', 'Failed to get Data  .');
           }
           
     }
