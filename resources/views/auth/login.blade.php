@@ -4,11 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+            <div class="panel panel-default" style="border: 1px solid #a9e7f2;border-radius: 25px;">
+                <div class="panel-heading" style="border: 1px solid #a9e7f2;border-radius: 25px;background:#effcff;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px; ">
+                
+                Login
+                 </div>
+                <div class="panel-body" style="border: 1px solid #a9e7f2;border-radius: 25px;border-top-left-radius: 0px;border-top-right-radius: 0px;">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

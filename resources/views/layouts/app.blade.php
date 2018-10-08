@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('home') }}">
-                         <img src="/images/logo.png" alt="PowerGen" height="35" width="200"/>
+                         <img src="/images/logo1.png" alt="PowerGen" height="35" width="200"/>
                         {{-- {{ config('app.name', 'Powergen Renewable Energy') }}</div> --}}
                     </a>
                 </div>
